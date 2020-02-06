@@ -37,5 +37,5 @@ with open(filename) as f:
     plt.ylabel("Temperature (F)", fontsize = 16);
     plt.tick_params(axis = "both", which = "major", labelsize = 16);
     
-    plt.savefig("haha.png", bbox_inches = "tight");
-    #plt.show();
+    #plt.savefig("haha.png", bbox_inches = "tight");
+    plt.show();
