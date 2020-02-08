@@ -15,7 +15,6 @@ with open(filename) as f:
     lows = [];
     for row in reader:
         try:
-
             date = datetime.strptime(row[0], "%Y-%m-%d");
             high = int(row[1]);
             low = int(row[3]);
