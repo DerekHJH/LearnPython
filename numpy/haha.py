@@ -1,12 +1,26 @@
 import numpy as np;
 import numpy.linalg as npl;#Linear algebra;
 import matplotlib.pyplot as plt;
+import time
 #from numpy import *; Use this to avoid adding the prefix np.;
 
 #The same as list(range(10));
 '''
 a = np.arange(10);
 print(a);
+'''
+
+#ndarry is much faster than list and consume less memory
+'''
+Sum = np.arange(1000000)
+Sum_list = list(range(1000000))
+t1 = time.time()
+for i in range(10):Sum = Sum * 2
+t2 = time.time()
+for i in range(10):Sum_list = [j * 2 for j in Sum_list]
+t3 = time.time()
+print(t2 - t1)
+print(t3 - t2)
 '''
 
 #Print all the types and the corresponding letter;
@@ -39,60 +53,60 @@ print(x["age"]);
 '''
 a = np.arange(24);
 b = a.reshape(2 , 3 , 4);#Alter the dimension of this array without changing itself;
-print(b);
-print(b[0][0][1]);
-print(b[0, 0, 1]);
-print("*" * 20);#Print 20 "*"s;
-print(b[1, 1:2, 1:]);
-print(b.shape);#Check the dimesionality of b;
+#print(b);
+#print(b[0][0][1]);
+#print(b[0, 0, 1]);
+#print("*" * 20);#Print 20 "*"s;
+#print(b[1, 1:2, 1:]);
+#print(b.shape);#Check the dimesionality of b;
 c = np.copy(a);
 c.shape = (3, 8);#Alter the dimension with changing itself;
-print(c);
+#print(c);
 c.resize([2, 12]);#Alter the dimension with changing itself;
-print(c);
-d = c.ravel();
-e = a.flatten();
-print("*" * 20);
+#print(c);
+d = c.ravel()
+e = a.flatten()
+#print("*" * 20);
 print(a);
 print(c);
 print(d);
 print(e);
-print("*" * 20);
-print(c.transpose());
-print(c);
+#print("*" * 20);
+#print(c.transpose());
+#print(c);
 '''
 
 #Comnination of arrays
 '''
 a = np.arange(9).reshape([3, 3]);
-print(a);
+#print(a);
 b = a * 2;
-print(b);
+#print(b);
 c = np.hstack((a, b, a));
-print(c);
+#print(c);
 d = np.concatenate((a, b, a), axis = 1);#The same as hstack;
-print(d);
-print("*" * 20);
+#print(d);
+#print("*" * 20);
 e = np.vstack((a, b, a));
-print(e);
+#print(e);
 f = np.concatenate((a, b, a), axis = 0);#The same as vstack;
-print(f);
-print("*" * 20);
-print(a);
-print(b);
+#print(f);
+#print("*" * 20);
+#print(a);
+#print(b);
 g = np.dstack((a, b, a));#Dimension expanded, g[][][0] == a; g[][][1] ==  b; g[][][2] == a;
-print(g);
-print("*" * 20);
+#print(g);
+#print("*" * 20);
 x = np.arange(9);
 y = x * 2;
 h = np.column_stack((x, y, x));#Combine as columns;
 i = np.column_stack((a, b, a));#View the n-1 D as one D;
 j = np.row_stack((x, y, x));#Combine as rows
 k = np.row_stack((a, b, a));
-print(h);
-print(i);
-print(j);
-print(k);
+#print(h);
+#print(i);
+#print(j);
+#print(k);
 '''
 
 #Split of arrays;
